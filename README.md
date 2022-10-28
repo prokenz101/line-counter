@@ -28,7 +28,7 @@ You must specify the file extensions for it to know what files to count lines fo
 Example:
 
 ```bash
-./line-counter .py
+line-counter .py
 ```
 
 The above command will make the program calculate the number of lines in every python file (in the current directory and all its children).
