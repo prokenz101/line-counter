@@ -6,7 +6,7 @@
 <br />
 
 ## Install
-### **This will require the .NET 6 SDK.**
+### **This will require the [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download).**
 
 Run the following commands:
 
