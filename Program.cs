@@ -4,7 +4,6 @@
         public static int LineCount = 0;
         public static List<string> FilesFound = new();
         public static List<string>? FileExtensions;
-        public static List<string> IgnoredDirectories = new();
 
         /// <summary>
         /// The starting point of the program.
@@ -34,16 +33,14 @@
             ).ToList<string>();
 
             foreach (string directory in directories) {
-                if (!IgnoredDirectories.Any(x => directory.Contains(x))) {
-                    List<string> files = Directory.GetFiles(directory).ToList<string>();
+                List<string> files = Directory.GetFiles(directory).ToList<string>();
 
-                    files.ForEach(x => {
-                        if (FileExtensions.Any(y => x.EndsWith(y))) {
-                            FilesFound.Add(Path.GetFileName(x));
-                            LineCount += File.ReadAllText(x).Split("\n").Length;
-                        }
-                    });
-                }
+                files.ForEach(x => {
+                    if (FileExtensions.Any(y => x.EndsWith(y))) {
+                        FilesFound.Add(Path.GetFileName(x));
+                        LineCount += File.ReadAllText(x).Split("\n").Length;
+                    }
+                });
             }
 
             Console.WriteLine($"Number of lines in project {new DirectoryInfo(BasePath).Name} is {LineCount}");
