@@ -11,7 +11,7 @@
 Run the following commands:
 
 ```bash
-git clone https://github.com/prokenz101/line-counter/tree/linux-x64
+git clone -b linux-x64 https://github.com/prokenz101/line-counter
 cd line-counter
 dotnet publish -c Release --self-contained false
 cd bin/Release/net6.0/linux-x64/publish
