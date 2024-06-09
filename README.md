@@ -5,21 +5,19 @@
 
 <br />
 
-## Install
+## Installation Approaches
 
-There are two versions of this program, the `framework-dependent` version and the `self-contained` version.
+### 1. With [.NET8 Runtime](https://dot.net/download)
+- Use the framework-dependent version in [Releases](https://github.com/prokenz101/line-counter/releases).
 
-If you have the .NET 6 Runtime, you may use the framework-dependent version.
-
-And if you don't, then either get the runtime, or use the self-contained version.
-
-Both of them may be found [here](https://github.com/prokenz101/line-counter/releases/latest).
+### 2. Without .NET8 Runtime (not recommended)
+- Use the self-contained version in [Releases](https://github.com/prokenz101/line-counter/releases).
 
 <br />
 
 ## Use
 
-Now, once you've downloaded the program, cut it and paste it into your code project's folder.
+Once you've downloaded the program, cut it and paste it into your code project's folder.
 
 Once the .exe file is in your code project, you may execute it in a terminal.
 
