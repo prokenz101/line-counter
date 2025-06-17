@@ -1,4 +1,4 @@
-﻿namespace LineCounter {
+﻿namespace line_counter {
     public class LineCounter {
         public static string BasePath = System.AppContext.BaseDirectory;
         public static int LineCount = 0;
@@ -11,9 +11,9 @@
         /// <param name="args">Command-line arguments.</param>
         static void Main(string[] args) {
 
-            try {
-                FileExtensions = args.ToList<string>();
-            } catch (IndexOutOfRangeException) {
+            if (args.Length > 0) {
+                FileExtensions = [.. args];
+            } else {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("It appears you did not specify any file types to count lines for.");
                 Console.ResetColor();
@@ -26,14 +26,14 @@
             }
 
             List<string> directories = Enumerable.Concat(
-                new List<string>() { BasePath },
-                Directory.GetDirectories(
+                [BasePath],
+                [.. Directory.GetDirectories(
                     BasePath, "*", new EnumerationOptions() { RecurseSubdirectories = true }
-                ).ToList()
-            ).ToList<string>();
+                )]
+            ).ToList();
 
             foreach (string directory in directories) {
-                List<string> files = Directory.GetFiles(directory).ToList<string>();
+                List<string> files = [.. Directory.GetFiles(directory)];
 
                 files.ForEach(x => {
                     if (FileExtensions.Any(y => x.EndsWith(y))) {
