@@ -5,10 +5,10 @@
 
 ## Installation Approaches
 
-### 1. With [.NET 9 Runtime](https://dot.net/download)
+### 1. With [.NET 10 Runtime](https://dot.net/download)
 - Download the framework-dependent build from [Releases](https://github.com/prokenz101/line-counter/releases).
 
-### 2. Without .NET 9 Runtime (not recommended)
+### 2. Without .NET 10 Runtime (not recommended)
 - Download the self-contained build from [Releases](https://github.com/prokenz101/line-counter/releases).
 
 <br />
